@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="container active">
+    <div class="container active" id="container">
         <header class="header">
             <div class="container__logo">
                 <button id="menu-button" class="menu-button"><i class="fa-solid fa-bars"></i></button>
@@ -23,7 +23,8 @@
             </div>
             <div class="container__search-bar">
                 <input type="text" placeholder="Buscar">
-                <button type="submit"><i class="fa-solid fa-search"></i></button>
+                <button type="submit" class="search"><i class="fa-solid fa-search"></i></button>
+                <button type="submit" class="micro"><i class="fa-solid fa-microphone"></i></button>
             </div>
             <div class="container__buttons-header">
                 <button><i class="fa-solid fa-upload"></i></button>
@@ -33,12 +34,62 @@
             </div>
         </header>
 
-        <nav class="lateral-menu">
+        <nav class="lateral-menu" id="lateral-menu">
+            <a href="#" class="active"><i class="fa-solid fa-house"></i> Página Principal</a>
+            <a href="#"><i class=" fa-solid fa-fire"></i> Tendencias</a>
+            <a href="#"><i class=" fa-brands fa-youtube"></i> Suscripciones</a>
+            <hr>
+            <a href="#"><i class="fa-solid fa-clock-rotate-left"></i> Historial</a>
+            <a href="#"><i class="fa-solid fa-thumbs-up"></i> Videos que me gustan</a>
+            <hr>
+            <a href="#"><i class="fa-solid fa-folder"></i> HTML/CSS</a>
+            <a href="#"><i class="fa-solid fa-folder"></i> JavaScript</a>
+            <a href="#"><i class="fa-solid fa-folder"></i> Wordpress</a>
+            <a href="#"><i class="fa-solid fa-folder"></i> Bootstrap</a>
+
 
         </nav>
 
         <main class="main">
-
+            <h3  class="title">Videos  Recomendados</h3>
+            <div class="grid-videos">
+                <a href="#" class="video">
+                    <img src="/img/dummy.png" alt="imagen de relleno">
+                </a>
+                <a href="#" class="video">
+                    <img src="/img/dummy.png" alt="imagen de relleno">
+                </a>
+                <a href="#" class="video">
+                    <img src="/img/dummy.png" alt="imagen de relleno">
+                </a>
+                <a href="#" class="video">
+                    <img src="/img/dummy.png" alt="imagen de relleno">
+                </a>
+                <a href="#" class="video">
+                    <img src="/img/dummy.png" alt="imagen de relleno">
+                </a>
+                <a href="#" class="video">
+                    <img src="/img/dummy.png" alt="imagen de relleno">
+                </a>
+                <a href="#" class="video">
+                    <img src="/img/dummy.png" alt="imagen de relleno">
+                </a>
+                <a href="#" class="video">
+                    <img src="/img/dummy.png" alt="imagen de relleno">
+                </a>
+                <a href="#" class="video">
+                    <img src="/img/dummy.png" alt="imagen de relleno">
+                </a>
+                <a href="#" class="video">
+                    <img src="/img/dummy.png" alt="imagen de relleno">
+                </a>
+                <a href="#" class="video">
+                    <img src="/img/dummy.png" alt="imagen de relleno">
+                </a>
+                <a href="#" class="video">
+                    <img src="/img/dummy.png" alt="imagen de relleno">
+                </a>
+            </div>
         </main>
     </div>
     <script src="/js/script.js"></script>
