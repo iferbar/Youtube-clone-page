@@ -10,7 +10,7 @@
     --defaultWhite: #fff;
     --anchorHover: #e5e5e5;
     --lateralIconColor: #606060;
-    --defaultRed:#f00;
+    --defaultRed: #f00;
     --hrLine: #dfdfdf;
     --mainBack: #f9f9f9;
 }
@@ -31,7 +31,7 @@ a {
     min-height: 100dvh;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 5.625rem auto;
+    grid-template-columns: minmax(5.625rem, 5.625rem) auto;
     grid-template-rows: 3.75rem auto;
     grid-template-areas:
         "header header"
@@ -39,7 +39,7 @@ a {
     transition: all 0.3s ease;
 }
 .container.active {
-    grid-template-columns: 18.75rem auto;
+    grid-template-columns: minmax(18.75rem, 20%) auto;
 }
 
 /*---HEADER---*/
@@ -117,8 +117,8 @@ a {
     color: var(--colorSearch);
     background-color: var(--backgroundSearch);
     cursor: pointer;
-    margin:0 4rem;
-    padding:0 0.75rem;
+    margin: 0 4rem;
+    padding: 0 0.75rem;
     border-radius: 50%;
 }
 .header .container__search-bar button:hover {
@@ -162,31 +162,31 @@ a {
     grid-area: menu;
     overflow: hidden;
 }
-.lateral-menu a{
+.lateral-menu a {
     display: block;
     padding: 0.9375rem 2.1875rem;
     color: var(--defaultBlack);
     min-width: 50rem;
 }
-.lateral-menu a:hover{
+.lateral-menu a:hover {
     background-color: var(--anchorHover);
 }
-.lateral-menu a.active{
+.lateral-menu a.active {
     background-color: var(--anchorHover);
     font-weight: bold;
 }
 .lateral-menu .fa-solid,
-.lateral-menu .fa-brands{
+.lateral-menu .fa-brands {
     color: var(--lateralIconColor);
     margin-right: 2rem;
     width: 1.5rem;
     text-align: center;
 }
 .lateral-menu a.active .fa-solid,
-.lateral-menu a.active .fa-brands{
+.lateral-menu a.active .fa-brands {
     color: var(--logo);
 }
-.lateral-menu  hr{
+.lateral-menu hr {
     margin: 1.5rem 0;
     border: 0.0625rem solid var(--hrLine);
 }
@@ -198,19 +198,85 @@ a {
     grid-area: main;
     padding: 2.5rem;
 }
-.main .title{
+.main .title {
     margin-bottom: 1.5rem;
 }
-.main .grid-videos{
+.main .grid-videos {
     display: grid;
     grid-row-gap: 2.5rem 1.25rem;
     gap: 2.5rem 1.25rem;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
-.main  .grid-videos .video{
+.main .grid-videos .video {
     width: 100%;
     display: block;
 }
-.main  .grid-videos .video img{
+.main .grid-videos .video img {
     width: 100%;
 }
+
+/*---MEDIA QUERYS---*/
+@media screen and (max-width: 75rem) {
+    .header .container__logo .logo span {
+        display: none;
+    }
+    .header .container__search-bar input {
+        min-width: 70%;
+    }
+    .header .container__search-bar .micro {
+        margin: 0 2rem;
+    }
+    .header .container__buttons-header button {
+        margin-right: 0.75rem;
+    }
+    .main .grid-videos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 62rem) {
+    .main .grid-videos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .header .container__search-bar .micro {
+        margin: 0 1rem;
+    }
+    .header .container__buttons-header button {
+        margin-right: 0.15rem;
+    }
+    .header .container__logo .menu-button {
+        margin-right: 0.25rem;
+    }
+}
+@media screen and (max-width: 48rem) {
+    .container {
+        grid-template-rows: auto;
+    }
+    .header .container__logo .menu-button {
+        margin-right: 0.5rem;
+    }
+    .header {
+        padding: 1.5rem;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        grid-template-areas:
+            "logo icons"
+            "search search";
+    }
+    .header .container__logo .logo span{
+        display: inline;
+    }
+    .header .container__search-bar input{
+        min-width: auto;
+        width: 100%;
+    }
+    .header .container__search-bar .micro {
+        margin: 0 1rem;
+        margin-right: 0;
+    }
+}
+@media screen and (max-width: 36rem) {
+    .main .grid-videos {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
